@@ -17,5 +17,5 @@ public class Game {
 		
 		frame.setVisible(true);
 	}
-	Sergiu
+	
 }
