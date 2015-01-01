@@ -6,26 +6,17 @@ import java.awt.event.KeyEvent;
 import Components.Button;
 import Main.GamePanel;
 
-public class MenuState extends GameState{
+public class OptionsState extends GameState{
 
 
 	
-	public MenuState(GameStateManager gsm) {
+	public OptionsState(GameStateManager gsm) {
 		super(gsm);
 	}
 
 	@Override
 	public void init() {
-		Button b = new Button(400, 300, "Play", 50, true, new Runnable(){
 
-			@Override
-			public void run() {
-				gsm.setState(GameStateManager.OPTIONSSTATE);
-			}
-			
-			});
-		
-		this.addComponent(b);
 	}
 
 	@Override
@@ -38,8 +29,7 @@ public class MenuState extends GameState{
 		g.setColor(GamePanel.background.getColor());
 		g.fillRect(0, 0, GamePanel.SIZE.width, GamePanel.SIZE.height);
 		
-		
-		this.drawComponents(g);
+		g.drawString("Options", 100, 100);
 	}
 
 	@Override

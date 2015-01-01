@@ -14,7 +14,7 @@ public class GameStateManager {
 	private int currentState;
 	 
 	public static final int MENUSTATE = 0;
-
+	public static final int OPTIONSSTATE = 1;
 
 	
 	public GameStateManager(){
@@ -23,6 +23,7 @@ public class GameStateManager {
 		states = new ArrayList<GameState>();	
 		
 		states.add(new MenuState(this));
+		states.add(new OptionsState(this));
 
 		states.get(currentState).init();
 	}

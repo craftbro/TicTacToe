@@ -48,7 +48,7 @@ public class Button extends GComponent{
 		FontMetrics fm = g.getFontMetrics();
 		
 		int w = fm.stringWidth(text);
-		width = w + 10;
+		width = w + 14;
 		
 		int rx = x;
 		int ry = y;
@@ -105,7 +105,7 @@ public class Button extends GComponent{
 
 		checkColors(g);
 		
-		g.fillRect(rx, ry, width, textSize);
+		g.fillRect(rx, ry, width, textSize+2);
 		
 		g.setColor(new Color(255, 255, 255));
 		

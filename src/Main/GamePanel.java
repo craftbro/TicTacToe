@@ -11,6 +11,7 @@ import javax.swing.JPanel;
 
 import Game.GameStateManager;
 import Util.Background;
+import Util.Mouse;
 
 public class GamePanel extends JPanel implements Runnable, KeyListener{
 
@@ -31,6 +32,8 @@ public class GamePanel extends JPanel implements Runnable, KeyListener{
 	private long targetTime = FPS/1000;
 
 	
+	//Mouse
+	public static Mouse mouse;
 
 	
 	//Drawing (Drawing)
@@ -70,7 +73,11 @@ public class GamePanel extends JPanel implements Runnable, KeyListener{
 		manager = new GameStateManager();
 		
 		background = new Background();
-
+		
+		mouse = new Mouse();
+		
+		this.addMouseListener(mouse);
+		this.addMouseMotionListener(mouse);
 	}
 
 	@Override
