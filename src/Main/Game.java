@@ -10,6 +10,7 @@ public class Game {
 		GamePanel panel = new GamePanel();
 		
 		frame.setResizable(false);
+		frame.setSize(panel.SIZE);
 		frame.setPreferredSize(panel.SIZE);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setLocationRelativeTo(null);
