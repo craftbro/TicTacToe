@@ -10,6 +10,7 @@ import java.awt.image.BufferedImage;
 import javax.swing.JPanel;
 
 import Game.GameStateManager;
+import Util.Background;
 
 public class GamePanel extends JPanel implements Runnable, KeyListener{
 
@@ -36,7 +37,7 @@ public class GamePanel extends JPanel implements Runnable, KeyListener{
 	private BufferedImage image;
 	private Graphics2D g;
 	private GameStateManager manager;
-
+	public static Background background;
 
 
 	public GamePanel(){
@@ -67,6 +68,8 @@ public class GamePanel extends JPanel implements Runnable, KeyListener{
 		g = (Graphics2D) image.getGraphics();
 		
 		manager = new GameStateManager();
+		
+		background = new Background();
 
 	}
 
@@ -104,6 +107,8 @@ public class GamePanel extends JPanel implements Runnable, KeyListener{
 	}
 	
 	private void update(){
+		background.update();
+		
 		manager.update();
 	}
 

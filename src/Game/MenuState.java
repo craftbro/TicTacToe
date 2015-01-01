@@ -8,7 +8,7 @@ import Main.GamePanel;
 
 public class MenuState extends GameState{
 
-	Color c = Color.blue;
+
 	
 	public MenuState(GameStateManager gsm) {
 		super(gsm);
@@ -26,7 +26,7 @@ public class MenuState extends GameState{
 
 	@Override
 	public void draw(Graphics2D g) {
-		g.setColor(c);
+		g.setColor(GamePanel.background.getColor());
 		
 		g.fillRect(0, 0, GamePanel.SIZE.width, GamePanel.SIZE.height);
 	}
@@ -34,7 +34,7 @@ public class MenuState extends GameState{
 	@Override
 	public void keyPressed(KeyEvent e) {
 		if(e.getKeyCode() == KeyEvent.VK_E){
-			c = Color.red;
+
 		}
 	}
 

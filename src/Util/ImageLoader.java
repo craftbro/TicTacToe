@@ -14,32 +14,6 @@ public class ImageLoader {
 	
 	private static HashMap<String, Map<Color, BufferedImage>> buffer = new HashMap<String, Map<Color, BufferedImage>>();
 
-	public  BufferedImage getClothing(String path, Color c){
-		
-		if(buffer.containsKey(path) && buffer.get(path).containsKey(c)){
-			return buffer.get(path).get(c);
-		}else{
-		
-		BufferedImage b = loadImage(path);
-	
-		
-		for(int x=0; x<b.getWidth(); x++){
-			for(int y=0; y<b.getHeight(); y++){
-				Color cc = new Color(b.getRGB(x, y));
-				
-				int alpha = (cc.getRGB()>>24) & 0xff;
-				
-				if(cc.getGreen() == 255 && cc.getRed() == 0 && cc.getBlue() == 255 && alpha == 255){
-					b.setRGB(x, y, c.getRGB());
-				}
-			}
-		}
-		
-		buffer.get(path).put(c, b);
-		
-		return b;
-		}
-	}
 	
 	
 	public  BufferedImage loadImage(String path){
